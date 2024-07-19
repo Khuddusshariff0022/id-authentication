@@ -150,7 +150,9 @@ import io.mosip.kernel.zkcryptoservice.service.impl.ZKCryptoManagerServiceImpl;
 				@ComponentScan.Filter(type = FilterType.REGEX, pattern = {
 						"io.mosip.idrepository.core.config.IdRepoDataSourceConfig.*" }),
 				@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = { HibernateDaoConfig.class,
-						SecurityAutoConfiguration.class }) })
+						SecurityAutoConfiguration.class }),
+                @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = { HibernateDaoConfig.class,
+                        CacheAutoConfiguration.class }) })
 @EnableJpaRepositories(basePackages = { "io.mosip.authentication.common.service.repository",
 		"io.mosip.kernel.keymanagerservice.repository" })
 @EntityScan(basePackages = { "io.mosip.authentication.common.service.entity",
