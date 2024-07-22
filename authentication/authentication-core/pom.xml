@@ -35,23 +35,23 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- Kernel Core -->
-		<dependency>
-			<groupId>io.mosip.kernel</groupId>
-			<artifactId>kernel-core</artifactId>
-			<version>${kernel.core.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>
-						spring-boot-starter-security
-					</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-					<artifactId>jackson-databind</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>io.mosip.kernel</groupId>-->
+<!--			<artifactId>kernel-core</artifactId>-->
+<!--			<version>${kernel.core.version}</version>-->
+<!--			<exclusions>-->
+<!--				<exclusion>-->
+<!--					<groupId>org.springframework.boot</groupId>-->
+<!--					<artifactId>-->
+<!--						spring-boot-starter-security-->
+<!--					</artifactId>-->
+<!--				</exclusion>-->
+<!--				<exclusion>-->
+<!--					<groupId>com.fasterxml.jackson.core</groupId>-->
+<!--					<artifactId>jackson-databind</artifactId>-->
+<!--				</exclusion>-->
+<!--			</exclusions>-->
+<!--		</dependency>-->
 		<!-- Commons Codec -->
 		<dependency>
 			<groupId>commons-codec</groupId>
