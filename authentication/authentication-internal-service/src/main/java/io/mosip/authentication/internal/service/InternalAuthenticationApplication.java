@@ -113,8 +113,8 @@ import io.mosip.kernel.zkcryptoservice.service.impl.ZKCryptoManagerServiceImpl;
  *
  * @author Dinesh Karuppiah
  */
-@SpringBootApplication(exclude = { CacheAutoConfiguration.class})
-@EnableAutoConfiguration
+@SpringBootApplication
+@EnableAutoConfiguration(exclude = { CacheAutoConfiguration.class})
 @Import(value = { IdValidationUtil.class, IDAMappingConfig.class, KeyBindedTokenAuthServiceImpl.class,
 		KeyManager.class, AuthContextClazzRefProvider.class,
 		RestRequestFactory.class, IdInfoFetcherImpl.class, OTPManager.class, MasterDataManager.class,
@@ -149,8 +149,7 @@ import io.mosip.kernel.zkcryptoservice.service.impl.ZKCryptoManagerServiceImpl;
 		"io.mosip.authentication.common.service.config" }, excludeFilters = {
 				@ComponentScan.Filter(type = FilterType.REGEX, pattern = {
 						"io.mosip.idrepository.core.config.IdRepoDataSourceConfig.*" }),
-				@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = { HibernateDaoConfig.class,
-						SecurityAutoConfiguration.class,CacheAutoConfiguration.class })})
+				@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = { HibernateDaoConfig.class})})
 @EnableJpaRepositories(basePackages = { "io.mosip.authentication.common.service.repository",
 		"io.mosip.kernel.keymanagerservice.repository" })
 @EntityScan(basePackages = { "io.mosip.authentication.common.service.entity",
