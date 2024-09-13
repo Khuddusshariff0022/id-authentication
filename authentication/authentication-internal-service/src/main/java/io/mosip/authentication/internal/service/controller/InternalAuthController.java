@@ -139,6 +139,8 @@ public class InternalAuthController {
 				String idType = Objects.nonNull(authRequestDTO.getIndividualIdType()) ? authRequestDTO.getIndividualIdType()
 						: idTypeUtil.getIdType(authRequestDTO.getIndividualId()).getType();
 				authRequestDTO.setIndividualIdType(idType);
+
+                mosipLogger.info(" sending for validateidvid ==> id = "+authRequestDTO.getIndividualId()+" idtype = "+ idType+" error = "+ errors);
 				internalAuthRequestValidator.validateIdvId(authRequestDTO.getIndividualId(), idType, errors);
 				
 				

@@ -112,6 +112,7 @@ public abstract class IdAuthValidator implements Validator {
 			errors.rejectValue(idFieldName, IdAuthenticationErrorConstants.MISSING_INPUT_PARAMETER.getErrorCode(),
 					new Object[] { IDV_ID }, IdAuthenticationErrorConstants.MISSING_INPUT_PARAMETER.getErrorMessage());
 		} else {
+            mosipLogger.info("==> sending to validateIdtypeUinVid");
 			validateIdtypeUinVid(id, idType, errors, idFieldName);
 		}
 	}
@@ -332,6 +333,7 @@ public abstract class IdAuthValidator implements Validator {
 				if (idType.getAliasOrType().equals(idTypeOrAlias)) {
 					if (idType == IdType.UIN) {
 						try {
+                            mosipLogger.info("==> validate with UIN ");
 							idValidator.validateUIN(id);
 						} catch (IdAuthenticationBusinessException e) {
 							mosipLogger.error(SESSION_ID, this.getClass().getSimpleName(), VALIDATE,
@@ -342,6 +344,7 @@ public abstract class IdAuthValidator implements Validator {
 						}
 					} else if (idType == IdType.VID) {
 						try {
+                            mosipLogger.info("==> validate with VID ");
 							idValidator.validateVID(id);
 						} catch (IdAuthenticationBusinessException e) {
 							mosipLogger.error(SESSION_ID, this.getClass().getSimpleName(), VALIDATE,

@@ -67,6 +67,7 @@ public class IdValidationUtil {
 		 * Check the Length of the UIN, It Should be specified number of digits
 		 * 
 		 */
+        mosipLogger.info("uinLength ==> "+uinLength);
 		if (id.length() != uinLength) {
 			mosipLogger.error(SESSION_ID, this.getClass().getSimpleName(), "VALIDATE",
 					"UIN length should be as per configuration");
