@@ -147,11 +147,12 @@ public abstract class BaseIDAFilter implements Filter {
 		};
 		
 		Map<String, Object> requestBody = null;
+        mosipLogger.info(requestWrapper.toString());
 		try {
 			requestBody = getRequestBody(requestWrapper.getInputStream());
 			if (requestBody == null) {
 
-                mosipLogger.info(requestBody.toString());
+
 				addIdAndVersionToRequestMetadata(requestWrapper);
 				chain.doFilter(requestWrapper, responseWrapper);
 				String responseAsString = responseWrapper.toString();
@@ -508,6 +509,7 @@ public abstract class BaseIDAFilter implements Filter {
 	 */
 	protected Map<String, Object> getRequestBody(InputStream requestBody) throws IdAuthenticationAppException {
 		try {
+
 			String reqStr = IOUtils.toString(requestBody, Charset.defaultCharset());
 			// requestBody empty for service like VID
 			return reqStr.isEmpty() ? null : mapper.readValue(reqStr, new TypeReference<Map<String, Object>>() {
