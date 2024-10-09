@@ -150,6 +150,8 @@ public abstract class BaseIDAFilter implements Filter {
 		try {
 			requestBody = getRequestBody(requestWrapper.getInputStream());
 			if (requestBody == null) {
+
+                mosipLogger.info(requestBody.toString());
 				addIdAndVersionToRequestMetadata(requestWrapper);
 				chain.doFilter(requestWrapper, responseWrapper);
 				String responseAsString = responseWrapper.toString();
